@@ -70,6 +70,9 @@ class ParentDetailController extends Controller
         // Saving the data into the db
         $parent_details = new ParentDetail();
 
+        // The relationship
+        $parent_details->user_id = request()->user()->id;
+
         // Father
         $parent_details->father = $father;
         $parent_details->father_surname = $father_surname;
@@ -101,7 +104,7 @@ class ParentDetailController extends Controller
         $parent_details->save();
 
         // After saving the data into the db, proceed to the spouse details page with the success message
-        return redirect()->to('spouse_details')->with('success', "Your parent details have been received successfully! Now fill the spouse details...");
+        return redirect(route('spouse details'))->with('success', "Your parent details have been received successfully! Now fill the spouse details...");
 
 
 

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('other_institution_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 
             // Additional fields
             // First Institution

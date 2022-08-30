@@ -24,7 +24,7 @@
 
                 <div class="card">
                     <!-- The form itself -->
-                    <form action="{{ url('student_upload_clubs_and_societies_details') }}" method="POST">
+                    <form action="{{ route('student_upload_clubs_and_societies_details') }}" method="POST">
                          <!-- The cross-site request forgery     -->
                          @csrf
                             {!! csrf_field() !!}

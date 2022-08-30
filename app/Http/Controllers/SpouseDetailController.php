@@ -45,6 +45,10 @@ class SpouseDetailController extends Controller
 
         //  Saving the details into the db
         $spouse_details = new SpouseDetail();
+
+        // The relationship
+        $spouse_details->user_id = request()->user()->id;
+        
         $spouse_details->marital_status = $marital_status;
         $spouse_details->spouse_surname = $spouse_surname;
         $spouse_details->spouse_first_name = $spouse_first_name;
@@ -59,7 +63,7 @@ class SpouseDetailController extends Controller
         // Save
         $spouse_details->save();
 
-        return redirect()->to('next_of_kin_details')->with('success', "Your spouse details have been received successfully! Now fill out your next of kin details below...");
+        return redirect(route('next of kin details'))->with('success', "Your spouse details have been received successfully! Now fill out your next of kin details below...");
  
     }
 }

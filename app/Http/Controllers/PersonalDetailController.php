@@ -12,6 +12,7 @@ class PersonalDetailController extends Controller
     public function uploadPersonalDetails(Request $request) {
         // Validation
         $request->validate([
+            
             'surname'=>'required',
             'first_name'=>'required',
             'last_name'=>'required',
@@ -28,6 +29,7 @@ class PersonalDetailController extends Controller
         ]);
 
         // Fetching the input data (Request)
+        // $user_id = $request->get("user_id");
         $surname = $request->surname;
         $first_name = $request->first_name;
         $last_name = $request->last_name;
@@ -62,6 +64,10 @@ class PersonalDetailController extends Controller
         // Saving  into the database
         $personal_details = new PersonalDetail(); //Upload a new record through the model
         
+        // The relationship
+        $personal_details->user_id = request()->user()->id;
+
+
         $personal_details->surname = $surname;
         $personal_details->first_name = $first_name;
         $personal_details->last_name = $last_name;
@@ -78,7 +84,9 @@ class PersonalDetailController extends Controller
         $personal_details->save();
 
         // After saving the data into the db, proceed to the parent details page with the success message
-        return redirect()->to('parent_details')->with('success', "Your personal details have been received successfully! Now fill the parent details...");
+        // return redirect()->to('parent_details')->with('success', "Your personal details have been received successfully! Now fill the parent details...");
+
+        return redirect(route('parent details'))->with('success', "Your personal details have been received successfully! Now fill the parent details...");
     }
 
     // // Viewing the personal details

@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('file_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            
             // Additional fields
             $table->string('photo', 300);
             $table->string('medical');

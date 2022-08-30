@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('emergency_contact_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            
             //  Emergency Contact
             $table->string('emerge_con_surname');
             $table->string('emerge_con_first_name');

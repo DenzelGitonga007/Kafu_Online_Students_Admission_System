@@ -18,6 +18,9 @@ return new class extends Migration
         Schema::create('high_school_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            
             // Addtional fields
             // First High School
             $table->string('first_high_school_name');

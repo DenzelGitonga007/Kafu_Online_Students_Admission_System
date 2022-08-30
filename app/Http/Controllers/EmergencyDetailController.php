@@ -41,6 +41,8 @@ class EmergencyDetailController extends Controller
         // Saving the data into the db
         $emerge_con_details = new EmergencyContactDetail();
 
+        $emerge_con_details->user_id = request()->user()->id;
+
         // Emergency Contact
         $emerge_con_details->emerge_con_surname = $emerge_con_surname;
         $emerge_con_details->emerge_con_first_name = $emerge_con_first_name;
@@ -55,6 +57,6 @@ class EmergencyDetailController extends Controller
         $emerge_con_details->save();
 
         // Redirect
-        return redirect()->to('high_school_details')->with('success', "Your emergency contact details have been received successfully! Now fill in your high school/secondary school details below...");
+        return redirect(route('high-school-details'))->with('success', "Your emergency contact details have been received successfully! Now fill in your high school/secondary school details below...");
     }
 }

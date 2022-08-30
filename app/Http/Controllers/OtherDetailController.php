@@ -26,13 +26,16 @@ class OtherDetailController extends Controller
         // Saving the data into the db
         $other_details = new OtherDetail();
 
+        // The relationship
+        $other_details->user_id = request()->user()->id;
+
         $other_details->physical_impairment = $physical_impairment;
         $other_details->physical_impairment_details = $physical_impairment_details;
         $other_details->other_information = $other_information;
 
         // Save
         $other_details->save();
-        return redirect()->to('files_details')->with('success', "Your other information details have been received successfully!Now upload your files in the form below...");
+        return redirect(route('files details'))->with('success', "Your other information details have been received successfully!Now upload your files in the form below...");
     }
 
 }

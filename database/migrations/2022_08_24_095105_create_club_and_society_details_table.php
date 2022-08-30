@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('club_and_society_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            
             // Additional fields
             $table->string('first_club');
             $table->string('second_club')->nullable();

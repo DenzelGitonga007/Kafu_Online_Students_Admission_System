@@ -56,76 +56,85 @@ Route::middleware([
 
 // Student Crud
 
-// Personal Details
+Route::prefix('/student')->group(function () {
+
+    // Personal Details
 // Uploading the personal details into the db
-Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
+
+// Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
+
+Route::post('/', [PersonalDetailController::class, "uploadPersonalDetails"])->name('student_upload_personal_details');
 
 // The parent details form
 // Viewing the form
-Route::get('parent_details', [ParentDetailController::class, "viewParentDetailsForm"]);
+Route::get('/parent-details', [ParentDetailController::class, "viewParentDetailsForm"])->name('parent details');
 // Uploading the parent details
-Route::post('student_upload_parent_details', [ParentDetailController::class, "uploadParentDetails"]);
+Route::post('/upload/parent-details/', [ParentDetailController::class, "uploadParentDetails"])->name('student_upload_parent_details');
 
 //Spouse details form
 // Viewing the form
-Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetailsForm"]);
+Route::get('/upload/spouse-details', [SpouseDetailController::class, "viewSpouseDetailsForm"])->name('spouse details');
 // Uploading the spouse details
-Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
+Route::post('/upload/spouse-details/', [SpouseDetailController::class, "uploadSpouseDetails"])->name('student_upload_spouse_details');
 
 
 // Next of kin details form
 // Viewing the form
-Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"]);
+Route::get('/next-of-kin-details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"])->name('next of kin details');
 // Uploading the next of kin details
-Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"]);
+Route::post('/upload/next-of-kin-details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"])->name('student_upload_next_of_kin_details');
 
 
 // The emergency details form
 // Viewing the form
-Route::get('emergency_contact_details', [EmergencyDetailController::class, "viewEmergencyContactDetailsForm"]);
+Route::get('/emergency-contact-details', [EmergencyDetailController::class, "viewEmergencyContactDetailsForm"])->name('emergency contact details');
 // Uploading the emergency contact details
-Route::post('student_upload_emergency_contact_details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"]);
+Route::post('/upload/emergency-contact-details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"])->name('student_upload_emergency_contact_details');
 
 
 // The highschool details
 // Viewing the form
-Route::get('high_school_details', [HighSchoolDetailController::class, "viewHighShoolDetailsForm"]);
+Route::get('/high-school-details', [HighSchoolDetailController::class, "viewHighShoolDetailsForm"])->name('high-school-details');
 // Uploading the high school details
-Route::post('student_upload_high_school_details', [HighSchoolDetailController::class, "uploadHighSchoolDetails"]);
+Route::post('/upload/high-school-details', [HighSchoolDetailController::class, "uploadHighSchoolDetails"])->name('student_upload_high_school_details');
 
 
 // The other institution details
 // Viewing the form
-Route::get('other_institution_details', [OtherInstitutionDetailController::class, "viewOtherInstitutionDetailsForm"]);
+Route::get('/other-institution-details', [OtherInstitutionDetailController::class, "viewOtherInstitutionDetailsForm"])->name('other-institution-details');
 // Uploading the high school details
-Route::post('student_upload_other_institution_details', [OtherInstitutionDetailController::class, "uploadOtherInstitutionDetails"]);
+Route::post('/upload/other-institution-details', [OtherInstitutionDetailController::class, "uploadOtherInstitutionDetails"])->name('student_upload_other_institution_details');
 
 
 // The games and sport details
 // Viewing the form
-Route::get('games_and_sports_details', [GameAndSportDetailController::class, "viewGameAndSportDetailsForm"]);
+Route::get('/games-and-sports-details', [GameAndSportDetailController::class, "viewGameAndSportDetailsForm"])->name('games and sports details');
 // Uploading the games and sports details
-Route::post('student_upload_games_and_sports_details', [GameAndSportDetailController::class, "uploadGameAndSportDetails"]);
+Route::post('/upload/games-and-sports-details', [GameAndSportDetailController::class, "uploadGameAndSportDetails"])->name('student_upload_games_and_sports_details');
 
 // The clubs and societies
 // Viewing the form
-Route::get('clubs_and_societies_details', [ClubAndSocietyController::class, "viewClubAndSocietyDetailsForm"]);
+Route::get('/clubs-and-societies-details', [ClubAndSocietyController::class, "viewClubAndSocietyDetailsForm"])->name('clubs and societies details');
 // Uploading the games and sports details
-Route::post('student_upload_clubs_and_societies_details', [ClubAndSocietyController::class, "uploadClubAndSocietiesDetails"]);
+Route::post('/upload/clubs-and-societies-details', [ClubAndSocietyController::class, "uploadClubAndSocietiesDetails"])->name('student_upload_clubs_and_societies_details');
 
 // The Other Details Form
 //Viewing the form
-Route::get('other_details', [OtherDetailController::class, "viewOtherDetailsForm"]);
+Route::get('/other-details', [OtherDetailController::class, "viewOtherDetailsForm"])->name('other details');
 // Uploading the games and sports details
-Route::post('student_upload_other_details', [OtherDetailController::class, "uploadOtherDetails"]);
+Route::post('/upload/other-details/', [OtherDetailController::class, "uploadOtherDetails"])->name('student_upload_other_details');
 
 // The Files Details Form
 //Viewing the form
-Route::get('files_details', [FileDetailController::class, "viewFileDetailsForm"]);
+Route::get('/files-details', [FileDetailController::class, "viewFileDetailsForm"])->name('files details');
 // Uploading the games and sports details
-Route::post('student_upload_files_details', [FileDetailController::class, "uploadFileDetails"]);
+Route::post('/upload/files-details', [FileDetailController::class, "uploadFileDetails"])->name('student_upload_files_details');
 
-Route::get('student_details_report', [StudentDetailReportController::class, "viewStudentDetailsReport"]);
+Route::get('/student-details-report', [StudentDetailReportController::class, "viewStudentDetailsReport"])->name('student details report');
+
+});
+
+
 
 
 

@@ -16,8 +16,14 @@ return new class extends Migration
     {
         Schema::create('personal_details', function (Blueprint $table) {
             $table->id();
+
             // Additional fields
             // Personal Details
+
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+
+
             $table->string("surname");
             $table->string("first_name");
             $table->string("last_name");
@@ -31,8 +37,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('pob');
 
-            // Relationship
             
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             
 

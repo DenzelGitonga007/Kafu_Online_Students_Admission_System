@@ -35,6 +35,9 @@ class OtherInstitutionDetailController extends Controller
         // Saving  into the database
         $other_institution_details = new OtherInstitutionDetail(); //Using the model to create a new instance of data(detail)
 
+        // The relationship
+        $other_institution_details->user_id = request()->user()->id;
+
         // First Institution
         $other_institution_details->first_institution_name = $first_institution_name;
         $other_institution_details->first_institution_specialization = $first_institution_specialization;
@@ -54,6 +57,6 @@ class OtherInstitutionDetailController extends Controller
         $other_institution_details->save();
 
         // Redirect
-        return redirect()->to('games_and_sports_details')->with('success', "Your other institution details and qualification details have been received successfully! Now fill in your games and sports form details below...");
+        return redirect(route('games and sports details'))->with('success', "Your other institution details and qualification details have been received successfully! Now fill in your games and sports form details below...");
     }
 }

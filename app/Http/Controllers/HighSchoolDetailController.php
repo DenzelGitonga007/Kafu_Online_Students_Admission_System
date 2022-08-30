@@ -49,6 +49,9 @@ class HighSchoolDetailController extends Controller
         // Saving  into the database
         $high_school_details = new HighSchoolDetail(); //Using the model to create a new instance of data(detail)
 
+        // The relationship
+        $high_school_details->user_id = request()->user()->id;
+
         // First High School
         $high_school_details->first_high_school_name = $first_high_school_name;
         $high_school_details->first_high_school_address = $first_high_school_address;
@@ -74,6 +77,6 @@ class HighSchoolDetailController extends Controller
         $high_school_details->save();
 
         // Redirect
-        return redirect()->to('other_institution_details')->with('success', "Your high school/secondary school details have been received successfully! Now fill the other institution and qualification form details below...");
+        return redirect(route('other-institution-details'))->with('success', "Your high school/secondary school details have been received successfully! Now fill the other institution and qualification form details below...");
     }
 }

@@ -27,6 +27,10 @@ class FileDetailController extends Controller
 
         // Saving the data
         $file_details = new FileDetail();
+
+        // The relationship
+        $file_details->user_id = request()->user()->id;
+        
         $file_details->photo = $photo;
         $file_details->medical = $medical;
         $file_details->sporting = $sporting;
@@ -34,6 +38,6 @@ class FileDetailController extends Controller
         // Save
         $file_details->save();
         
-        return redirect()->to('student_details_report')->with('success', "Your details have been received successfully!");
+        return redirect(route('student details report'))->with('success', "Your details have been received successfully!");
     }
 }

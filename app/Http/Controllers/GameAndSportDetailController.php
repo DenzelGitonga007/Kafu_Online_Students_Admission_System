@@ -26,6 +26,9 @@ class GameAndSportDetailController extends Controller
         // Saving the data into the db
         $games_and_sports_details = new  GameAndSportDetail();
 
+        // The relationship
+        $games_and_sports_details->user_id = request()->user()->id;
+
         $games_and_sports_details->games_and_sports = $games_and_sports;
         $games_and_sports_details->games_representation = $games_representation;
 
@@ -33,6 +36,6 @@ class GameAndSportDetailController extends Controller
         $games_and_sports_details->save();
 
         // return redirect('/crud/student_crud/games_and_sports_details');
-        return redirect()->to('clubs_and_societies_details')->with('success', "Your games and sports details have been received successfully! Now fill in the clubs and societies details form below...");
+        return redirect(route('clubs and societies details'))->with('success', "Your games and sports details have been received successfully! Now fill in the clubs and societies details form below...");
     }
 }

@@ -12,8 +12,23 @@ class PersonalDetail extends Model
     protected $table = 'personal_details';
     protected $primaryKey = 'id';
     protected $fillable = [
+        // 'user_id',
         'surname', 
         'first_name', 
-        'last_name'
+        'last_name',
+        'date',
+        'gender',
+        'national_id',
+        'nationality',
+        'religion',
+        'email',
+        'phone',
+        'city',
+        'pob',
     ];
+
+    // The relationship
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('next_of_kin_details', function (Blueprint $table) {
             $table->id();
 
+            // Relationship
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+
             // Additional fields
             //  Next of Kin
             $table->string('nxtk_surname');

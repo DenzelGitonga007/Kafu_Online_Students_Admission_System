@@ -24,7 +24,7 @@
 
                 <div class="card">
                     <!-- The form itself -->
-                    <form action="{{ url('student_upload_high_school_details') }}" method="POST">
+                    <form action="{{ route('student_upload_high_school_details') }}" method="POST">
                          <!-- The cross-site request forgery     -->
                          @csrf
                             {!! csrf_field() !!}
@@ -89,7 +89,7 @@
 
                                         <!-- From -->
                                         <td>
-                                           <input type="date" class="form-control" name="first_high_school_from_date" max="2007-01-01" value="{{ old('first_high_school_from_date') }}">
+                                           <input type="date" class="form-control" name="first_high_school_from_date" max="2018-01-01" value="{{ old('first_high_school_from_date') }}">
                                            <!-- Validation -->
                                            @error('first_high_school_from_date')
                                                 <div class="alert alert-danger col" role="alert">
@@ -100,7 +100,7 @@
 
                                         <!-- To -->
                                         <td>
-                                            <input type="date" class="form-control" name="first_high_school_to_date" max="2007-01-01" value="{{ old('first_high_school_to_date') }}">
+                                            <input type="date" class="form-control" name="first_high_school_to_date" max="2022-04-01" value="{{ old('first_high_school_to_date') }}">
                                             <!-- Validation -->
                                             @error('first_high_school_to_date')
                                                 <div class="alert alert-danger col" role="alert">
@@ -134,12 +134,12 @@
 
                                         <!-- From -->
                                         <td>
-                                           <input type="date" class="form-control" name="second_high_school_from_date" max="2007-01-01" value="{{ old('second_high_school_from_date') }}">
+                                           <input type="date" class="form-control" name="second_high_school_from_date" max="2018-01-01" value="{{ old('second_high_school_from_date') }}">
                                         </td>
 
                                         <!-- To -->
                                         <td>
-                                            <input type="date" class="form-control" name="second_high_school_to_date" max="2007-01-01" value="{{ old('second_high_school_to_date') }}">
+                                            <input type="date" class="form-control" name="second_high_school_to_date" max="2022-04-01" value="{{ old('second_high_school_to_date') }}">
                                         </td>
                                     </tr>
 
@@ -167,12 +167,12 @@
 
                                         <!-- From -->
                                         <td>
-                                           <input type="date" class="form-control" name="third_high_school_from_date" max="2007-01-01" value="{{ old('third_high_school_from_date') }}">
+                                           <input type="date" class="form-control" name="third_high_school_from_date" max="2018-01-01" value="{{ old('third_high_school_from_date') }}">
                                         </td>
 
                                         <!-- To -->
                                         <td>
-                                            <input type="date" class="form-control" name="third_high_school_to_date" max="2007-01-01" value="{{ old('third_high_school_to_date') }}">
+                                            <input type="date" class="form-control" name="third_high_school_to_date" max="2022-04-01" value="{{ old('third_high_school_to_date') }}">
                                         </td>
                                     </tr>
                                 </table>

@@ -45,6 +45,9 @@ class NextOfKinDetailController extends Controller
         // Saving the data into the db
         $nxtk_details = new NextOfKinDetail();
 
+        // The relationship
+        $nxtk_details->user_id = request()->user()->id;
+
         // Next of Kin Details
         $nxtk_details->nxtk_surname = $nxtk_surname;
         $nxtk_details->nxtk_first_name = $nxtk_first_name;
@@ -59,7 +62,7 @@ class NextOfKinDetailController extends Controller
         $nxtk_details->save();
 
         // Redirect to the emergency contact details
-        return redirect()->to('emergency_contact_details')->with('success', "Your next of kin details have been received successfully! Now fill in your emergency contact details below...");
+        return redirect(route('emergency contact details'))->with('success', "Your next of kin details have been received successfully! Now fill in your emergency contact details below...");
         
     }
 }
