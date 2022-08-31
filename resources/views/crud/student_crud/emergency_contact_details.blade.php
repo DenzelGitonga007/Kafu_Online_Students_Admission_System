@@ -150,7 +150,7 @@
                         <div class="card-body">
                             <div class="col">
                                 <div class="row">
-                                    <button class="btn btn-outline-success btn-block">Submit Your Parent/Guardian Details</button>
+                                    <button class="btn btn-outline-success btn-block">Submit Your Emergency Contact Details</button>
                                 </div>
                             </div>
                         </div>            

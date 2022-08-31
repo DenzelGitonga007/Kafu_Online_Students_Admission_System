@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Home Dashboard') }}
+        <h2 class="h4 font-weight-bold">
+            {{ __('Kafu Online Students Admission System') }}
         </h2>
     </x-slot>
 

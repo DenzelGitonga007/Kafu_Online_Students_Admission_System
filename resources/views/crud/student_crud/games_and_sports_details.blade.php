@@ -145,7 +145,7 @@
                         <div class="card-body">
                             <div class="col">
                                 <div class="row">
-                                    <button class="btn btn-outline-success btn-block">Submit Your Other Institution Details or Proceed to the next form</button>
+                                    <button class="btn btn-outline-success btn-block">Submit Your Games and Sports Details</button>
                                 </div>
                             </div>
                         </div>

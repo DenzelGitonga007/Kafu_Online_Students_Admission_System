@@ -173,7 +173,7 @@
                             <div class="card-body">
                                 <div class="col">
                                     <div class="row">
-                                        <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
+                                        <button class="btn btn-outline-success btn-block">Submit Your Spouse Details</button>
                                     </div>
                                 </div>
                             </div>
