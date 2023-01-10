@@ -54,7 +54,7 @@ class PersonalDetailController extends Controller
         ]);
 
         // Redirect
-        return redirect(route('parent details'))
+        return redirect(route('parent_details.index'))
         ->with('success', "Your personal details have been received successfully! Now fill the parent details...");
     }
 

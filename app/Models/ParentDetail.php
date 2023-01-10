@@ -11,7 +11,7 @@ class ParentDetail extends Model
     protected $table = 'parent_details';
     protected $primaryKey = 'id';
     protected $fillable = [
-
+        'user_id',
         // Father
         'father',
         'father_surname',

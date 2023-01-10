@@ -1,5 +1,6 @@
 Refactoring the project:
-1. php artisan make: controller PersonalDetailController --resource --model=PersonalDetail
+1. Personal_Details
+1. php artisan make:controller PersonalDetailController --resource --model=PersonalDetail
 2. in the PersonalDetailController, store method:
      // Store the data from personal_details.blade.php
         PersonalDetail::create([
@@ -24,3 +25,12 @@ Refactoring the project:
         ->with('success', "Your personal details have been received successfully! Now fill the parent details...");
 3. In routes:
         Route::resource('personal_details', PersonalDetailController::class);
+2. Parent_details
+1. php artisan make:controller ParentDetailController --resource --model=ParentDetail
+2. Add the input fields into the store method, remember:
+        'user_id'=>$request -> user()->id, // the relationship and add it to the model as well
+3. Change the route name in the form, to route('parent_details.store')
+4. Change the routes to:
+        Route::resource('parent_details', ParentDetailController::class)
+
+3. Spouse details

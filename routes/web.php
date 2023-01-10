@@ -58,22 +58,13 @@ Route::middleware([
 
 Route::prefix('/student')->group(function () {
 
-    // Personal Details
-// Uploading the personal details into the db
+// Presenting the forms and uploading the data
 
-// Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
-
-// Route::post('/', [PersonalDetailController::class, "uploadPersonalDetails"])
-// ->name('student_upload_personal_details'); -- the actual one before
-
-// Post the personal detail into db
+// Personal details
 Route::resource('personal_details', PersonalDetailController::class);
 
 // The parent details form
-// Viewing the form
-Route::get('/parent-details', [ParentDetailController::class, "viewParentDetailsForm"])->name('parent details');
-// Uploading the parent details
-Route::post('/upload/parent-details/', [ParentDetailController::class, "uploadParentDetails"])->name('student_upload_parent_details');
+Route::resource('/parent_details', ParentDetailController::class);
 
 //Spouse details form
 // Viewing the form
