@@ -63,7 +63,11 @@ Route::prefix('/student')->group(function () {
 
 // Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
 
-Route::post('/', [PersonalDetailController::class, "uploadPersonalDetails"])->name('student_upload_personal_details');
+// Route::post('/', [PersonalDetailController::class, "uploadPersonalDetails"])
+// ->name('student_upload_personal_details'); -- the actual one before
+
+// Post the personal detail into db
+Route::resource('personal_details', PersonalDetailController::class);
 
 // The parent details form
 // Viewing the form

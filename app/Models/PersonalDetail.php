@@ -12,7 +12,7 @@ class PersonalDetail extends Model
     protected $table = 'personal_details';
     protected $primaryKey = 'id';
     protected $fillable = [
-        // 'user_id',
+        'user_id',
         'surname', 
         'first_name', 
         'last_name',
@@ -31,4 +31,5 @@ class PersonalDetail extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+    
 }

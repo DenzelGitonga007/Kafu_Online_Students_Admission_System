@@ -1,0 +1,26 @@
+Refactoring the project:
+1. php artisan make: controller PersonalDetailController --resource --model=PersonalDetail
+2. in the PersonalDetailController, store method:
+     // Store the data from personal_details.blade.php
+        PersonalDetail::create([
+            // The input fields
+            'user_id'=>$request -> user()->id, // the relationship
+            'surname'=>$request -> input('surname'),
+            'first_name'=>$request -> input('first_name'),
+            'last_name'=>$request -> input('last_name'),
+            'date'=> $request -> input('date'),
+            'gender'=> $request -> input('gender'),
+            'national_id'=> $request -> input('national_id'),
+            'nationality'=> $request -> input('nationality'),
+            'religion'=> $request -> input('religion'),
+            'email'=> $request -> input('email'),
+            'phone'=> $request -> input('phone'),
+            'city'=> $request -> input('city'),
+            'pob'=> $request -> input('pob'),
+        ]);
+
+        // Redirect
+        return redirect(route('parent details'))
+        ->with('success', "Your personal details have been received successfully! Now fill the parent details...");
+3. In routes:
+        Route::resource('personal_details', PersonalDetailController::class);
