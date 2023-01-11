@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <form action="{{ route('student_upload_emergency_contact_details') }}" method="POST"> <!-- The url/route posts the details -->
+                    <form action="{{ route('emergency_contact_details.store') }}" method="POST"> <!-- The url/route posts the details -->
                         <!-- The cross-site request forgery -->
                         @csrf 
                         {!! csrf_field() !!} 

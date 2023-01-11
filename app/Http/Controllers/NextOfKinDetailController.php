@@ -48,7 +48,7 @@ class NextOfKinDetailController extends Controller
         'nxtk_city'=> $request -> input('nxtk_city'),
         'nxtk_pob'=> $request -> input('nxtk_pob'),
         ]);
-        return redirect(route('emergency contact details'))
+        return redirect(route('emergency_contact_details.index'))
         ->with('success', "Your next of kin details have been received successfully! Now fill in your emergency contact details below...");
     }
 

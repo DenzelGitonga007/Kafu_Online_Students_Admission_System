@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClubAndSocietyController;
+use App\Http\Controllers\EmergencyContactDetailController;
 use App\Http\Controllers\EmergencyDetailController;
 use App\Http\Controllers\FileDetailController;
 use App\Http\Controllers\GameAndSportDetailController;
@@ -73,11 +74,7 @@ Route::resource('spouse_details', SpouseDetailController::class);
 Route::resource('next_of_kin_details', NextOfKinDetailController::class);
 
 // The emergency details form
-// Viewing the form
-Route::get('/emergency-contact-details', [EmergencyDetailController::class, "viewEmergencyContactDetailsForm"])->name('emergency contact details');
-// Uploading the emergency contact details
-Route::post('/upload/emergency-contact-details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"])->name('student_upload_emergency_contact_details');
-
+Route::resource('emergency_contact_details', EmergencyContactDetailController::class);
 
 // The highschool details
 // Viewing the form

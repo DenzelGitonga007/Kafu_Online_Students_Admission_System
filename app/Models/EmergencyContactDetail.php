@@ -13,6 +13,7 @@ class EmergencyContactDetail extends Model
     protected $fillable = [
 
         //Emergency Contact
+        'user_id',
         'emerge_con_surname',
         'emerge_con_first_name',
         'emerge_con_initial_name',
