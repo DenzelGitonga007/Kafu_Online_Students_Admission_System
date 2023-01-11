@@ -7,62 +7,93 @@ use Illuminate\Http\Request;
 
 class NextOfKinDetailController extends Controller
 {
-    // Return the next of kin details form view
-    public function viewNextofKinDetailsForm() {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        // Present the next of kin details view
         return view('crud.student_crud.next_of_kin_details');
     }
 
-    // Uploading the next_of_kin_details
-    public function uploadNextOfKinDetails(Request $request) {
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        // 
+    }
 
-        // Validation
-        $request->validate([
-
-        // Next of Kin
-        'nxtk_surname'=> 'required',
-        'nxtk_first_name'=> 'required',
-        'nxtk_initial_name'=> 'required',
-        'nxtk_national_id'=> 'required',
-        'nxtk_email'=> 'required',
-        'nxtk_phone'=> 'required',
-        'nxtk_city'=> 'required',
-        'nxtk_pob'=> 'required',
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // Store the data from the next of kin form
+        NextOfKinDetail::create([
+        'user_id' => $request -> user()->id,
+        'nxtk_surname'=> $request -> input('nxtk_surname'),
+        'nxtk_first_name'=> $request -> input('nxtk_first_name'),
+        'nxtk_initial_name'=> $request -> input('nxtk_initial_name'),
+        'nxtk_national_id'=> $request -> input('nxtk_national_id'),
+        'nxtk_email'=> $request -> input('nxtk_email'),
+        'nxtk_phone'=> $request -> input('nxtk_phone'),
+        'nxtk_city'=> $request -> input('nxtk_city'),
+        'nxtk_pob'=> $request -> input('nxtk_pob'),
         ]);
+        return redirect(route('emergency contact details'))
+        ->with('success', "Your next of kin details have been received successfully! Now fill in your emergency contact details below...");
+    }
 
-        // Fetching the input data
-        // Next of Kin 
-        $nxtk_surname = $request->nxtk_surname;
-        $nxtk_first_name = $request->nxtk_first_name;
-        $nxtk_initial_name = $request->nxtk_initial_name;
-        $nxtk_national_id = $request->nxtk_national_id;
-        $nxtk_email = $request->nxtk_email;
-        $nxtk_phone = $request->nxtk_phone;
-        $nxtk_city = $request->nxtk_city;
-        $nxtk_pob = $request->nxtk_pob;
-    
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\NextOfKinDetail  $nextOfKinDetail
+     * @return \Illuminate\Http\Response
+     */
+    public function show(NextOfKinDetail $nextOfKinDetail)
+    {
+        //
+    }
 
-        // Saving the data into the db
-        $nxtk_details = new NextOfKinDetail();
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\NextOfKinDetail  $nextOfKinDetail
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(NextOfKinDetail $nextOfKinDetail)
+    {
+        //
+    }
 
-        // The relationship
-        $nxtk_details->user_id = request()->user()->id;
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\NextOfKinDetail  $nextOfKinDetail
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, NextOfKinDetail $nextOfKinDetail)
+    {
+        //
+    }
 
-        // Next of Kin Details
-        $nxtk_details->nxtk_surname = $nxtk_surname;
-        $nxtk_details->nxtk_first_name = $nxtk_first_name;
-        $nxtk_details->nxtk_initial_name = $nxtk_initial_name;
-        $nxtk_details->nxtk_national_id = $nxtk_national_id;
-        $nxtk_details->nxtk_email = $nxtk_email;
-        $nxtk_details->nxtk_phone = $nxtk_phone;
-        $nxtk_details->nxtk_city = $nxtk_city;
-        $nxtk_details->nxtk_pob = $nxtk_pob;
-
-        // Saving the data
-        $nxtk_details->save();
-
-        // Redirect to the emergency contact details
-        return redirect(route('emergency contact details'))->with('success', "Your next of kin details have been received successfully! Now fill in your emergency contact details below...");
-        
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\NextOfKinDetail  $nextOfKinDetail
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(NextOfKinDetail $nextOfKinDetail)
+    {
+        //
     }
 }

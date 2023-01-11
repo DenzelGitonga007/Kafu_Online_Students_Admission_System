@@ -14,6 +14,7 @@ class NextOfKinDetail extends Model
     protected $fillable = [
 
         //Next of Kin
+        'user_id',
         'nxtk_surname',
         'nxtk_first_name',
         'nxtk_initial_name',

@@ -38,3 +38,10 @@ Refactoring the project:
 1. php artisan make:controller SpouseDetailController --resource --model=SpouseDetail
 2. In index method:
         return view('crud.student_crud.spouse_details');
+
+4. Next of Kin Details
+1. php artisan make:controller NextOfKinDetailController --resource --model=NextOfKinDetail
+2. In index method, return the view, in store method, create the input fields
+3. In the routes, use resource 
+4. In the view, change the route to submit through the store method 
+

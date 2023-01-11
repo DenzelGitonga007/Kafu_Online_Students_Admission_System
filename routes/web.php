@@ -70,11 +70,7 @@ Route::resource('parent_details', ParentDetailController::class);
 Route::resource('spouse_details', SpouseDetailController::class);
 
 // Next of kin details form
-// Viewing the form
-Route::get('/next-of-kin-details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"])->name('next of kin details');
-// Uploading the next of kin details
-Route::post('/upload/next-of-kin-details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"])->name('student_upload_next_of_kin_details');
-
+Route::resource('next_of_kin_details', NextOfKinDetailController::class);
 
 // The emergency details form
 // Viewing the form

@@ -51,7 +51,7 @@ class SpouseDetailController extends Controller
             'spouse_occupation'=> $request -> input('spouse_occupation'),
         ]);
         // Redirect
-        return redirect(route('next of kin details'))
+        return redirect(route('next_of_kin_details.index'))
         ->with('success', "Your spouse details have been received successfully! Now fill out your next of kin details below...");
     }
 
