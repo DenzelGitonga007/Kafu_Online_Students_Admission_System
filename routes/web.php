@@ -77,11 +77,7 @@ Route::resource('next_of_kin_details', NextOfKinDetailController::class);
 Route::resource('emergency_contact_details', EmergencyContactDetailController::class);
 
 // The highschool details
-// Viewing the form
-Route::get('/high-school-details', [HighSchoolDetailController::class, "viewHighShoolDetailsForm"])->name('high-school-details');
-// Uploading the high school details
-Route::post('/upload/high-school-details', [HighSchoolDetailController::class, "uploadHighSchoolDetails"])->name('student_upload_high_school_details');
-
+Route::resource('high_school_details', HighSchoolDetailController::class);
 
 // The other institution details
 // Viewing the form

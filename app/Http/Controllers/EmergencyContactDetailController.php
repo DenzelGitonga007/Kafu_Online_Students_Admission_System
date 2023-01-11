@@ -49,7 +49,7 @@ class EmergencyContactDetailController extends Controller
             'emerge_con_pob'=> $request -> input('emerge_con_pob'),
         ]);
         // Redirect
-        return redirect(route('high-school-details'))
+        return redirect(route('high_school_details.index'))
         ->with('success', "Your emergency contact details have been received successfully! Now fill in your high school/secondary school details below...");
     }
 

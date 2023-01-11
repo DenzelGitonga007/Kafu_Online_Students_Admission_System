@@ -11,7 +11,7 @@ class HighSchoolDetail extends Model
     protected $table = 'high_school_details';
     protected $primaryKey = 'id';
     protected $fillable = [
-
+        'user_id',
         // First High School
         'first_high_school_name',
         'first_high_school_address',
