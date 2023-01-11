@@ -13,6 +13,7 @@ class SpouseDetail extends Model
     protected $table = 'spouse_details';
     protected $primaryKey = 'id';
     protected $fillable = [
+        'user_id',
         'marital_status',
         'spouse_surname',
         'spouse_first_name',

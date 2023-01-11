@@ -24,7 +24,7 @@
                
                 <!-- Name -->
                     <div class="card">
-                        <form action="{{ route('student_upload_spouse_details') }}" method="POST"> <!-- The route personal_details posts the details -->
+                        <form action="{{ route('spouse_details.store') }}" method="POST"> <!-- The route personal_details posts the details -->
                             <!-- The cross-site request forgery     -->
                             @csrf
                             {!! csrf_field() !!}

@@ -68,7 +68,7 @@ class ParentDetailController extends Controller
         ]);
 
         // After saving the data into the db, proceed to the spouse details page with the success message
-        return redirect(route('spouse details'))
+        return redirect(route('spouse_details.index'))
         ->with('success', "Your parent details have been received successfully! Now fill the spouse details...");
     }
 

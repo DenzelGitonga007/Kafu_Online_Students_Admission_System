@@ -30,7 +30,11 @@ Refactoring the project:
 2. Add the input fields into the store method, remember:
         'user_id'=>$request -> user()->id, // the relationship and add it to the model as well
 3. Change the route name in the form, to route('parent_details.store')
+        return redirect(route('spouse_details.index'))
 4. Change the routes to:
         Route::resource('parent_details', ParentDetailController::class)
 
 3. Spouse details
+1. php artisan make:controller SpouseDetailController --resource --model=SpouseDetail
+2. In index method:
+        return view('crud.student_crud.spouse_details');

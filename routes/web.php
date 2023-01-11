@@ -64,14 +64,10 @@ Route::prefix('/student')->group(function () {
 Route::resource('personal_details', PersonalDetailController::class);
 
 // The parent details form
-Route::resource('/parent_details', ParentDetailController::class);
+Route::resource('parent_details', ParentDetailController::class);
 
 //Spouse details form
-// Viewing the form
-Route::get('/upload/spouse-details', [SpouseDetailController::class, "viewSpouseDetailsForm"])->name('spouse details');
-// Uploading the spouse details
-Route::post('/upload/spouse-details/', [SpouseDetailController::class, "uploadSpouseDetails"])->name('student_upload_spouse_details');
-
+Route::resource('spouse_details', SpouseDetailController::class);
 
 // Next of kin details form
 // Viewing the form
